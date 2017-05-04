@@ -13,7 +13,7 @@ import com.jpm.evaluation.util.PerformDataValidationImpl;
 import com.jpm.evaluation.util.StringConstants;
 
 /**
- * @author ak
+ * @author AK
  *
  */
 public class SettlementDateTest {

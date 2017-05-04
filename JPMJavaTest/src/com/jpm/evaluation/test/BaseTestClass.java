@@ -3,13 +3,17 @@ package com.jpm.evaluation.test;
 import java.text.ParseException;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 
 import com.jpm.evaluation.data.InstructionData;
 import com.jpm.evaluation.data.InstructionDataList;
 import com.jpm.evaluation.exception.BaseCustomException;
 import com.jpm.evaluation.util.StringConstants;
 
+/**
+ * @author AK
+ *
+ *Doesnt run any test.All the steps common to all tests can be added here
+ */
 public class BaseTestClass {
 
 	protected InstructionDataList iList = null;

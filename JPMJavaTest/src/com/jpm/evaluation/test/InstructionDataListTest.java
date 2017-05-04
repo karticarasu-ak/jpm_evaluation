@@ -7,7 +7,6 @@ import java.text.ParseException;
 import org.junit.Test;
 
 import com.jpm.evaluation.data.InstructionData;
-import com.jpm.evaluation.exception.NullEntityException;
 
 public class InstructionDataListTest extends BaseTestClass {
 
@@ -24,7 +23,7 @@ public class InstructionDataListTest extends BaseTestClass {
 	}
 
 	@Test
-	public void topRankingEntitiesTest() throws ParseException, NullEntityException {
+	public void topRankingEntitiesTest() throws ParseException {
 
 		// Check the top ranking entities for a day
 		assertEquals(iListOnSeventh.getTopBuyRankEntity().getEntityName(), "abc");

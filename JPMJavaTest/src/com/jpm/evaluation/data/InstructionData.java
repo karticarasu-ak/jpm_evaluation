@@ -8,6 +8,12 @@ import com.jpm.evaluation.util.ErrorMessage;
 import com.jpm.evaluation.util.PerformDataValidation;
 import com.jpm.evaluation.util.PerformDataValidationImpl;
 
+/**This class holds data for an Instruction and performs basic operations like calculating the
+ * US Amount
+ * 
+ * @author AK
+ *
+ */
 public class InstructionData {
 
 	private String entityName;
@@ -20,11 +26,19 @@ public class InstructionData {
 	private double pricePeUnit;
 	private double usdAmount;
 
+	/**
+	 * Method to get the USD amount
+	 * @return usd amount
+	 */
 	public double getUsdAmount() {
 		return usdAmount;
 	}
 
-	public void calculateUsdAmount() {
+	/**
+	 * Method calculates the US Amount
+	 * 
+	 */
+	private void calculateUsdAmount() {
 		double usdAmount = pricePeUnit * units * agreedFx;
 
 		this.usdAmount = usdAmount;
@@ -43,13 +57,20 @@ public class InstructionData {
 		this.pricePeUnit = pricePeUnit;
 
 		this.calculateUsdAmount();
-
 	}
 
+	/**
+	 * Method returns Entity Name
+	 * @return Entity Name
+	 */
 	public String getEntityName() {
 		return entityName;
 	}
 
+	/**
+	 * Method returns buy or sell
+	 * @return buy or sell
+	 */
 	public InstructionType getBuyOrSell() {
 		if (buyOrSell.equals("B")) {
 			return InstructionType.Buy;
@@ -58,30 +79,68 @@ public class InstructionData {
 
 	}
 
+	/**
+	 * Method returns agreed fx
+	 * @return agreed fx
+	 */
 	public double getAgreedFx() {
 		return agreedFx;
 	}
 
+	/**
+	 * Method returns currency
+	 * @return currency
+	 */
 	public String getCurrency() {
 		return currency;
 	}
 
+	/**
+	 * Method returns instruction Date
+	 * @return
+	 */
 	public Date getInstructionDate() {
 		return instructionDate;
 	}
 
+	/**
+	 * Method returns settlement date
+	 * @return settlement date
+	 */
 	public Date getSettlementDate() {
 		return settlementDate;
 	}
 
+	/**
+	 * Method returns units
+	 * @return units
+	 */
 	public long getUnits() {
 		return units;
 	}
 
+	/**
+	 * Method returns price per unit
+	 * @return price per unit
+	 */
 	public double getPricePeUnit() {
 		return pricePeUnit;
 	}
 
+	/**
+	 * Method builds the object for instruction data using all the parameters provided.
+	 * 
+	 * @param entityName
+	 * @param buyOrSell
+	 * @param agreedFx
+	 * @param currency
+	 * @param instructionDate
+	 * @param settlementDate
+	 * @param units
+	 * @param pricePeUnit
+	 * @return Instruction Data object
+	 * @throws BaseCustomException
+	 */
 	public static InstructionData getInstructDataObject(String entityName, String buyOrSell, double agreedFx,
 			String currency, String instructionDate, String settlementDate, long units, double pricePeUnit)
 			throws BaseCustomException {

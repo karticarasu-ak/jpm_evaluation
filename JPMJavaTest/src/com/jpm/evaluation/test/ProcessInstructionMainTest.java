@@ -1,21 +1,18 @@
 package com.jpm.evaluation.test;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import com.jpm.evaluation.ProcessInstruction;
 import com.jpm.evaluation.ProcessInstructionImpl;
-import com.jpm.evaluation.data.InstructionDataList;
 import com.jpm.evaluation.exception.BaseCustomException;
 import com.jpm.evaluation.util.StringConstants;
 
-public class ProcessInstructionTest extends BaseTestClass {
+public class ProcessInstructionMainTest extends BaseTestClass {
 
 	
 	
 	/**
-	 * The main method which is used to test the data ingestion and report
+	 * The main method which is used to test the data Ingestion and report
 	 * 
 	 * @param args
 	 * @throws ParseException 
@@ -23,7 +20,7 @@ public class ProcessInstructionTest extends BaseTestClass {
 	 * 
 	 * Test Data 
 	 * Test 1:
-	 * SettlementDate: 07-Jan-2016: Thurday
+	 * SettlementDate: 07-Jan-2016: Thursday
 	 * 1-instruction from abc,xyz,lmn,cde,jkl,bar
 	 * Total: Incoming amount: 10000
 	 * Total: Outgoing amount: 19899.5
@@ -58,7 +55,7 @@ public class ProcessInstructionTest extends BaseTestClass {
 	
 	public static void main(String args[]) throws ParseException, BaseCustomException{
 		
-		 System.setProperty(StringConstants.ENV_VAR,StringConstants.ENV_VAR_PROP);
+		System.setProperty(StringConstants.ENV_VAR,StringConstants.ENV_VAR_PROP);
 		
 		ProcessInstruction processInstruction  = new ProcessInstructionImpl();
 				
@@ -76,22 +73,6 @@ public class ProcessInstructionTest extends BaseTestClass {
 		processInstruction.addNewIntruction("aec", "B", 0.50, "AED", "01-JAN-2016", "09-JAN-2016", 200, 100.25);
 		processInstruction.addNewIntruction("plp", "B", 0.50, "SGP", "01-JAN-2016", "09-JAN-2016", 200, 100.25);
 		
-		Date date = new SimpleDateFormat("dd-MMM-yyyy").parse("10-JAN-2016");
-		
-//     processInstruction.printReportforThisDay(date);
-		
 		processInstruction.printReportforAllDays();
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
